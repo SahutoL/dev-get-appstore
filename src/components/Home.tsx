@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Button, Modal, Form } from "react-bootstrap";
 import { FaPlus } from "react-icons/fa";
 import DeveloperList from "./DeveloperList";
-import { fetchArtistInfo } from "../services/api";
+import { fetchDeveloperApps } from "../services/api";
 import "../styles/Home.css";
 
 const Home: React.FC = () => {
@@ -28,7 +28,7 @@ const Home: React.FC = () => {
 
   const handleAddDeveloper = async () => {
     const appId = url.split("/id")[1];
-    const artistInfo = await fetchArtistInfo(appId);
+    const artistInfo = await fetchDeveloperApps(appId);
     if (artistInfo) {
       const newDevelopers = [...developers, artistInfo];
       setDevelopers(newDevelopers);
