@@ -8,8 +8,8 @@ export default defineConfig({
     VitePWA({
       registerType: "autoUpdate",
       manifest: {
-        short_name: "DevApp",
-        name: "Developer App",
+        short_name: "DevGet",
+        name: "Developer Getting App",
         icons: [
           {
             src: "/logo192.png",
