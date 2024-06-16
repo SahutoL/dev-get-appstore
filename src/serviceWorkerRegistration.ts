@@ -15,7 +15,7 @@ type Config = {
 
 export function register(config?: Config) {
   if (process.env.NODE_ENV === "production" && "serviceWorker" in navigator) {
-    const publicUrl = new URL(process.env.PUBLIC_URL, window.location.href);
+    const publicUrl = import.meta.env.VITE_PUBLIC_URL || window.location.href;
     if (publicUrl.origin !== window.location.origin) {
       return;
     }
