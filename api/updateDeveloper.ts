@@ -4,8 +4,8 @@ import { OneSignalClient } from "@onesignal/node-onesignal";
 
 // OneSignalの設定
 const client = new OneSignalClient({
-  appId: process.env.VITE_PUBLIC_ONESIGNAL_APP_ID || "",
-  restApiKey: "YOUR_ONESIGNAL_REST_API_KEY",
+  appId: import.meta.env.VITE_PUBLIC_ONESIGNAL_APP_ID || "",
+  restApiKey: import.meta.env.VITE_PUBLIC_ONESIGNAL_REST_API || "",
 });
 
 export default async (req: VercelRequest, res: VercelResponse) => {

@@ -6,10 +6,9 @@ const App = () => {
   useEffect(() => {
     OneSignal.init({
       appId: import.meta.env.VITE_PUBLIC_ONESIGNAL_APP_ID || "",
-      allowLocalhostAsSecureOrigin: true,
     });
 
-    OneSignal.showNativePrompt().catch((err) => {
+    OneSignal.showSlidedownPrompt().catch((err) => {
       console.error("Error displaying the slidedown prompt:", err);
     });
   }, []);
