@@ -1,0 +1,13 @@
+name: Update Developers
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # 毎日0時に実行
+  workflow_dispatch:
+
+jobs:
+  update-developers:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call updateDevelopers API
+        run: curl -X GET https://dev-get-appstore.vercel.app/api/updateDevelopers
