@@ -27,7 +27,7 @@ const Home: React.FC = () => {
   const handleClose = () => setShow(false);
 
   const handleAddDeveloper = async () => {
-    const appId = url.split("/id")[1];
+    const appId = url.split("/id")[-1];
     const artistInfo = await fetchDeveloperApps(appId);
     if (artistInfo) {
       const newDevelopers = [...developers, artistInfo];
